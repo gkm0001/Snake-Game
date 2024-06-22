@@ -1,0 +1,141 @@
+General styling for the game area
+.game-area {
+    position: relative;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    border: 2px solid #0f3460;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  
+  
+  * {
+    background-color: black;
+  }
+  
+   
+  .snake-segment {
+    position: absolute;
+    background-color: #e94560;
+    border-radius: 50%;
+    transition: all 0.1s linear;
+    box-shadow: 0 0 5px rgba(233, 69, 96, 0.7);
+  }
+  
+ 
+  .snake-segment:first-child {
+    background-color: #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.9);
+  }
+  
+ 
+  .food {
+    position: absolute;
+    background-color: #4ecdc4;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+    animation: pulse 1s infinite alternate;
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.7);
+  }
+   
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+ 
+  .game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: #e94560;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: gameOverPulse 1.5s infinite alternate;
+  }
+  
+ 
+  @keyframes gameOverPulse {
+    0% {
+      opacity: 0.7;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+  
+   
+  .score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #4ecdc4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #4ecdc4;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+ 
+  .start-button:hover {
+    background-color: #45b7aa;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  
+ 
+  @keyframes scoreIncrease {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+   
+  .score-animate {
+    animation: scoreIncrease 0.5s ease-in-out;
+  }
+  
+  
+  .snake-segment:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 1);
+  }
+  .food:hover {
+    background-color: #45b7aa;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(78, 205, 196, 1);
+  }
+  
+
+  /* .game-area {
+     background-color: aqua;
+  }
+
+  .snake-segment {
+     background-color: black;
+  } */
